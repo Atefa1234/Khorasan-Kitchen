@@ -1,0 +1,177 @@
+/* General Styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* First Section */
+.first-section {
+  background-image: url("../images/pickle-perfection-v1.jpg"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  position: fixed; /* Fix the section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row; /* Mobile first: column layout */
+}
+
+/* Site Title */
+.site-title {
+  font-size: 1.5rem;
+  color: white;
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition for site title */
+  text-align: center;
+  margin: 0; /* Remove any default margin */
+}
+
+/* Navigation Items */
+.nav-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none; /* Hidden by default on mobile */
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  opacity: 0; /* Start hidden */
+  transform: translateY(-20px); /* Start slightly above */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition with 1 second duration */
+}
+
+.nav-items li {
+  margin: 1rem 0;
+}
+
+.nav-items a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0; /* Remove any default padding */
+}
+
+/* Hamburger Menu */
+.ham-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  margin: 0; /* Remove any default margin */
+  margin-left: 2rem; /* Add margin to move it away from the corner */
+}
+
+.ham-menu span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  transition: all 1s ease; /* Smooth transition with 1 second duration */
+}
+
+/* Carrito de Compras */
+.carrito {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  margin: 0; /* Remove any default margin */
+  margin-right: 2rem; /* Add margin to move it away from the corner */
+}
+
+.carrito-icon {
+}
+
+.carrito-count {
+  font-size: 1.2rem;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+}
+
+/* Active State for Hamburger Menu */
+.ham-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Active State for Navigation Items */
+.nav-items.active {
+  display: flex; /* Show navigation items when active */
+  flex-direction: column;
+  align-items: center;
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move to original position */
+  animation: slideIn 1s ease; /* Apply sliding animation */
+}
+
+/* Keyframes for Sliding Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Hero Content */
+.hero-content {
+  color: white;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content .shop-now {
+  background-color: white;
+  color: #df7c6d;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hero-content .shop-now:hover {
+  transform: scale(1.1);
+}
